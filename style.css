@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+/*========= 背景動画設定のCSS ===============*/
+
+/*header設定*/
+#header{
+    position: relative;/*h1の中央寄せ配置の起点とするためのrelative*/
+    height: 100vh;/*高さを全画面にあわせる*/
+} 
+
+#video-area{
+    position: fixed;
+    z-index: -1;/*最背面に設定*/
+    top: 0;
+    right:0;
+    left:0;
+    bottom:0;
+    overflow: hidden;
+}
+
+#video {
+    /*天地中央配置*/
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*縦横幅指定*/
+    width: 177.77777778vh; /* 16:9 の幅→16 ÷ 9＝ 177.77% */
+    height: 56.25vw; /* 16:9の幅 → 9 ÷ 16 = 56.25% */
+    min-height: 100%;
+    min-width: 100%;
+}
+
+/*見出し設定*/
+h1{
+    /*要素の配置*/
+    /* position:absolute; */
+    /*要素を天地中央寄せ*/
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translateY(-50%) translateX(-50%); */
+    /*見た目の調整*/
+    color:#fff;
+    text-shadow: 0 0 15px #666;
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+#container{
+  background:#fff;
+  padding:300px 0;
+  text-align: center;
+}
+ody{
+  background: #FFFCF5;
+}
+.about{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-top: 30px;
+}
+
+.about-img{
+  width: 48%;
+  aspect-ratio: 13/10;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.about-content{
+  width: 48%;
+  padding-top: 40px;
+  color: #2b2b2b;
+}
+
+.about-name{
+  font-size: 40px;
+}
+
+.about-subtitle{
+  color: #30A9C6;
+  font-size: 24px;
+  margin-top: 24px;
+}
+
+.sns{
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.sns img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.skill{
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-top: 120px;
+}
+
+.skill-title{
+  text-align: center;
+}
+
+.skill-title h2{
+  font-size: 32px;
+  color: #30A9C6;
+  line-height: 1.2;
+}
+
+.skill-title span {
+  font-size: 16px;
+  color: #2b2b2b;
+  font-weight: 700;
+}
+
+.skill-list{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2%;
+}
+
+.skill-item{
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+
+.skill-item img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.skill-item span{
+  font-size: 16px;
+  font-weight: 700;
+}
+.work span {
+  text-align:left;
+  font-size: 16px;
+  color: #2b2b2b;
+  font-weight: 700;
+}
+.work h1{
+  font-size: 75px;
+  color: #30A9C6;
+}
+.work-list{
+  padding: 0.5%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0.5%;
+}
+.work-title span{
+    font-size: 22px;
+    margin-top: -44px;
+    margin-left: 66px;
+    display: block;
+}
+.fv{
+  position: relative;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(img/597018\ \(1\).jpg)
+ 
+}
+.fv h1 {
+  font-size: 60px;
+ text-align: center;
+}
+/* スクロールCSS */
+.fadeIn {
+  opacity: 0;
+  transition-duration: 1500ms;
+  transition-property: opacity, transform;
+}
+.fadeIn-up {
+  transform: translate(0, 50px);
+}
+.fadeIn-down {
+  transform: translate(0, -50px);
+}
+.fadeIn-left {
+  transform: translate(-50px, 0);
+}
+.fadeIn-right {
+  transform: translate(50px, 0);
+}
+.fadeIn.scrollin {
+  opacity : 1;
+  transform : translate(0, 0);
+}
+@keyframes display-fadein{
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
